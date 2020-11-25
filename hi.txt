@@ -1,0 +1,21 @@
+global $module_data, $db;
+
+
+$song_id = $nv_Request->get_string('listid', 'get', '');
+
+$id = (int)$song_id;
+
+$sql =  "DELETE FROM " . NV_PREFIXLANG . "_" . $module_data . "_songs1 WHERE id = :id";;
+$sth = $db->prepare($sql);
+$sth->bindParam(':id', $id);
+$sth->execute();
+
+
+
+
+\//
+
+{ROW.link_delete}
+
+//
+
